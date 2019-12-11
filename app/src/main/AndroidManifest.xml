@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zenolab.ax.cryptocurrencyexchanges">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.zenolab.ax.cryptocurrencyexchanges.checkup.app.AppCore"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".StartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.zenolab.ax.cryptocurrencyexchanges.checkup.pin.mvp.PinCodeActivity" />
+        <activity android:name=".InvalidateActivity"></activity>
+        <activity
+            android:name=".crypto.presentation.ui.CryptoActivity"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ScrollingActivity"
+            android:noHistory="true"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+
+        <activity
+            android:name="com.zenolab.ax.news.view.NewsActivity"
+            android:parentActivityName="com.zenolab.ax.cryptocurrencyexchanges.checkup.pin.mvp.PinCodeActivity">
+
+            <!-- Parent activity meta-data to support API level 4+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.zenolab.ax.cryptocurrencyexchanges.checkup.pin.mvp.PinCodeActivity" />
+
+        </activity>
+
+        <activity
+            android:name="com.zenolab.ax.news.view.NewsDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <!--END TEMP-->
+
+
+    </application>
+
+</manifest>
